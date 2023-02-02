@@ -11,7 +11,7 @@ export default function Router() {
          <Routes>
             <Route path="*" element={<Error />} />
             <Route path="/" element={<Index />} />
-            <Route path="/logement/:id" element={<Lodging />} />
+            <Route path="/lodging/:id" element={<Lodging />} />
             <Route path="/about" element={<About />} />
          </Routes>
       </BrowserRouter>

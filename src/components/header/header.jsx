@@ -1,18 +1,14 @@
-import { useState } from 'react'
+// import { useState } from 'react'
+import Logo from "../../assets/logo.svg"
 
 export default function Header(props) {
-    let [compteur, setCompteur] = useState(0)
-
-    function incrementation(){
-        console.log(compteur)
-        setCompteur(compteur = compteur + 1);
-    }
     return (
-
-      <header className="header">
-        <button onClick={incrementation}>Incrémenter</button>
-        <div>{compteur}</div>
-         Bonjour {props.name ? props.name : "tout le monde"}
+      <header>
+       <img src={Logo} alt="" />
+       <ul>
+        <li>Accueil</li>
+        <li>A propos</li>
+       </ul>
       </header>
     );
   }
