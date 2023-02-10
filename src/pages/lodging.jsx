@@ -4,6 +4,11 @@ import { useNavigate } from "react-router-dom";
 import Carrousel from "../components/carrousel/carrousel";
 import Dropdown from "../components/dropdown/dropdown";
 import Layout from "../components/layout/layout";
+import LodgingOwner from "../components/lodgingOwner/lodgingOwner";
+import StarContain from "../components/starContain/starContain";
+import Tag from "../components/tag/tag";
+import styles from "./styles/lodging.module.scss"
+
 
 export default function Lodging() {
     const [lodgingData, setLodgingData] = useState({})
@@ -26,20 +31,23 @@ export default function Lodging() {
         <Layout>
             <Carrousel imgArray={lodgingData.pictures} />
             <div>
-                <div>
-                    <div>
+                <div className={styles.lodging}>
+                    <div className={styles.lodgingTitle}>
                         <h2>{lodgingData.title}</h2>
                         <h3>{lodgingData.location}</h3>
-                        <div>
-                            {/* {Boucle générant des composants TAGS} */}
+                        <div className={styles.tagList}>
+                            {
+                                lodgingData.tags && lodgingData.tags.map((value, key) => {
+                                    return <Tag key={key}> {value} </Tag>
+                                })}
                         </div>
                     </div>
-                    <div>
-                        {/*Composant regroupant les infos du logeur.*/}
-                        {/* {Composant contenant les étoiles} */}
+                    <div className={styles.ratingAndOwner}>
+                        {<LodgingOwner avatar={lodgingData.host && lodgingData.host.picture} name={lodgingData.host && lodgingData.host.name} />}
+                        {<StarContain rating={lodgingData.rating}></StarContain>}
                     </div>
                 </div>
-                <div>
+                <div className={styles.dropdownContain}>
                     <Dropdown title="Description" longSize="1"><p>{lodgingData.description}</p></Dropdown>
                     <Dropdown title="Équipements" longSize="1">
                         <ul>

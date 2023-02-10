@@ -1,0 +1,12 @@
+Rendre le css plus réactif.
+Pour la page index : 
+Corriger les margins, en mode mobile les marges ne sont pas les mêmes entre la bannière top et les cards, tout doit être aligné.
+Revoir la hauteur de la bannière-titre pour la rendre plus dynamique.
+
+
+
+continuer à travailler sur react routeur pour prendre en compte les vraies erreur 404
+
+largeur des éléments : width:86.111111%;
+Couleur saumon  : #FF6060
+Couleur grises des titres cards  : rgba(0,0,0,0.065)

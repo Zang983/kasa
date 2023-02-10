@@ -1,0 +1,12 @@
+.about{
+    width:89.33333%;
+    margin:auto;
+    margin-bottom:51px;
+    display:flex;
+    flex-direction: column;
+    gap:30px;
+    @media screen and (min-width:1024px) {
+        width:71.04%;
+        margin-bottom:82px;
+    }
+}

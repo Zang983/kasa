@@ -1,0 +1,27 @@
+.lodgingOwner{
+    display:flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap:10px;
+    font-size:12px;
+    font-weight:500;
+    @media screen and (min-width: 1024px) {
+        font-size:18px;   
+    }
+    p{
+        display:flex;
+        flex-direction: column;
+        width:50%;
+        text-align: right;
+    }
+    img{
+        border-radius:50%;
+        width:32px;
+        height:32px;
+        @media screen and (min-width: 1024px) {
+            width:64px;
+            height:64px;
+        }
+
+    }
+}

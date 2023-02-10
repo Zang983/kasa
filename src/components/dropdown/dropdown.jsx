@@ -1,24 +1,26 @@
 import { useEffect, useState } from "react";
+import styles from "./dropdown.module.scss"
 
 
 /**
  * Rajouter une condition ajoutant la class longSize si boolean à true
  * Modifier la div "Test action" par un chevron fait avec des attributs css
  */
-export default function Dropdown({ title,longSize, children }) {
-    const [statut, setStatut] = useState(false)
+export default function Dropdown({ title, longSize, children }) {
+    const [statut, setStatut] = useState(true)
+    useEffect(() => {//A étudier
 
-useEffect(()=>{//A étudier
-
-},[statut])
+    },)
 
     return (
-        <div>
-            <h3>{title} <div onClick={(e) => {
+        <div className={`${styles.dropdown} ${longSize && longSize === "1" ? `${styles.dropdownSmaller}` : null}`}>
+            <h3>{title} 
+            <div className={statut ? styles.arrowUp : styles.arrowDown} onClick={(e) => {
                 setStatut(!statut);
-            }}>Test action</div></h3>
-            {statut ? <p>{children}</p> : null }
+            }}>
+            </div>
+            </h3>
+            <div className={statut === false ? styles.hidden : styles.visible}>{children}</div>
         </div>
     );
 }
-

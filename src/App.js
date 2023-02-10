@@ -1,9 +1,12 @@
-import './App.css';
+import React from 'react';
 import Router from "./router.jsx"
+import './app.module.scss';
 
 function App() {
   return (
-    <Router />
+    <React.StrictMode>
+      <Router />
+    </React.StrictMode>
   );
 }
 

@@ -3,14 +3,19 @@ import Header from "../header/header.jsx"
 import Footer from "../footer/footer.jsx"
 
 
-
-export default function Layout(props) {
+/**
+ * 
+ * @param {String} actualPage name of actual page
+ * @param {Pagte content} children content of th page
+ * @returns 
+ */
+export default function Layout({actualPage,children}) {
     return (
-        <div>
-            <Header></Header>
-            {props.children}
+        <>
+            <Header actualPage={actualPage}></Header>
+            {children}
             <Footer></Footer>
-        </div>
+        </>
 
 
 

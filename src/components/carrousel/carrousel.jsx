@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import styles from "./carrousel.module.scss"
 
 export default function Carrousel({ imgArray }) {
     const [index, setIndex] = useState(0)
@@ -19,11 +20,11 @@ export default function Carrousel({ imgArray }) {
     }, [])
 
     return (
-        <div>
-            {imgArray && imgArray.length > 1 ? <button onClick={() => navigate(-1)}>GAUCHE</button> : null}
+        <div className={styles.carrousel}>
+            {imgArray && imgArray.length > 1 ? <div className={styles.arrowLeft} onClick={() => navigate(-1)}></div> : null}
             <img src={imgArray && imgArray[index]} alt="" />
-            {imgArray && imgArray.length > 1 ? <button  onClick={() => navigate(1)}>DROITE</button> : null}
-            {imgArray && imgArray.length > 1 ? <p >{index + 1} / {imgArray && imgArray.length}</p> : null}
+            {imgArray && imgArray.length > 1 ? <div className={styles.arrowRight} onClick={() => navigate(1)}></div> : null}
+            {imgArray && imgArray.length > 1 ? <p className={styles.count}>{index + 1} / {imgArray && imgArray.length}</p> : null}
         </div>
     );
 }

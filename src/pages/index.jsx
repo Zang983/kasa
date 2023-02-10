@@ -3,7 +3,7 @@ import Layout from "../components/layout/layout.jsx"
 import ContentBanner from "../components/contentBanner/contentBanner.jsx"
 import contentBannerImg from "../assets/contentBanner_index.png"
 import Card from "../components/card/card.jsx"
-
+import styles from "./styles/index.module.scss"
 
 export default function Index() {
     const [data, setData] = useState()
@@ -16,8 +16,10 @@ export default function Index() {
     }, [])
     return (
         <Layout actualPage="index">
-            <ContentBanner image={contentBannerImg} title="Chez vous, partout et ailleurs"></ContentBanner>
-            <main>
+            <ContentBanner image={contentBannerImg}  page=''>
+            Chez vous, partout et ailleurs
+            </ContentBanner>
+            <main className={styles.index} >
                 {
                     data && data.map((value, key) => {
                         return <Card data={value} key={key}></Card>
