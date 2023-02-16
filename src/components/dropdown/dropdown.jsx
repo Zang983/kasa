@@ -1,16 +1,14 @@
 import { useEffect, useState } from "react";
 import styles from "./dropdown.module.scss"
 
-
 /**
- * Rajouter une condition ajoutant la class longSize si boolean à true
- * Modifier la div "Test action" par un chevron fait avec des attributs css
+ * 
+ * @param {String} title of the block
+ * @param {Boolean} longSize to know if block take all place or if it's smaller (components is in lodging and about pages) 
+ * @returns 
  */
 export default function Dropdown({ title, longSize, children }) {
     const [statut, setStatut] = useState(true)
-    useEffect(() => {//A étudier
-
-    },)
 
     return (
         <div className={`${styles.dropdown} ${longSize && longSize === "1" ? `${styles.dropdownSmaller}` : null}`}>

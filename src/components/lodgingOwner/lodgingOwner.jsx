@@ -1,5 +1,11 @@
 import styles from "./lodgingOwner.module.scss"
 
+/**
+ * 
+ * @param {string} name of lodging's owner
+ * @param {string} avatar of lodging's owner
+ * @returns 
+ */
 export default function LodgingOwner({name,avatar}){
 
     return(

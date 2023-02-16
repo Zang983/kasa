@@ -1,11 +1,15 @@
 import Logo from "../logo/logo";
 import styles from "./header.module.scss"
 
+/**
+ * 
+ * @param {String} actualPage to underline actual page
+ * @returns 
+ */
 export default function Header({actualPage}) {
     return (
       <header>
        <a href="/">
-       {/* <img src={Logo} alt="" />Insérer le SVG plutôt que l'image et en faire un composant a part entière avec son propre style. */}
        <Logo backColor="none" fillColor="#FF6060"></Logo>
        </a>
        
