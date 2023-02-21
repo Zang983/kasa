@@ -16,8 +16,6 @@ export default function Carrousel({ imgArray }) {
             console.error("Un problème de navigation dans le slider d'image est présent.")
         }
     }
-    useEffect(() => {//A étudier
-    }, [])
 
     return (
         <div className={styles.carrousel}>

@@ -25,7 +25,7 @@ export default function Lodging() {
     }
     useEffect(() => {
         getDatas()
-    })
+    },[])
 
     return (
         <Layout>
@@ -48,8 +48,8 @@ export default function Lodging() {
                     </div>
                 </div>
                 <div className={styles.dropdownContain}>
-                    <Dropdown title="Description" longSize="1"><p>{lodgingData.description}</p></Dropdown>
-                    <Dropdown title="Équipements" longSize="1">
+                    <Dropdown isOpen={true} title="Description" longSize="1"><p>{lodgingData.description}</p></Dropdown>
+                    <Dropdown isOpen={true} title="Équipements" longSize="1">
                         <ul>
                             {
                                 lodgingData.equipments && lodgingData.equipments.map((equipment, key) => <li key={key}>{equipment}</li>)

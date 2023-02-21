@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import {useState } from "react";
 import styles from "./dropdown.module.scss"
 
 /**
@@ -7,8 +7,10 @@ import styles from "./dropdown.module.scss"
  * @param {Boolean} longSize to know if block take all place or if it's smaller (components is in lodging and about pages) 
  * @returns 
  */
-export default function Dropdown({ title, longSize, children }) {
-    const [statut, setStatut] = useState(true)
+export default function Dropdown({ title, longSize,isOpen, children }) {
+    console.log(isOpen)
+    const [statut, setStatut] = useState(isOpen && isOpen ? true : false)
+
 
     return (
         <div className={`${styles.dropdown} ${longSize && longSize === "1" ? `${styles.dropdownSmaller}` : null}`}>
